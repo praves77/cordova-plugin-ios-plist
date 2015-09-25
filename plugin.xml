@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright (c) 2015 praves
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+-->
+
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="cordova-plugin-ios-plist" version="1.0.4">
+
+    <name>xordova-plugin-ios-plist</name>
+    <description>Phonegap, Cordova, Intel XDK plugin for iOS to update -Info.plist to ignore blocking of cleartext HTTP by Application Transport Security</description>
+    <keywords>cordova, ios9, info.plist,  Application Transport Security</keywords>
+
+    <author email="praves.dev@outlook.com" href="https://github.com/praves77/cordova-plugin-ios-plist">praves</author>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+
+    <license>MIT</license>
+
+    <repo>https://github.com/praves77/cordova-plugin-ios-plist.git</repo>
+    <issue>https://github.com/praves77/cordova-plugin-ios-plist/issues</issue>
+
+
+
+<!-- android-specific elements -->
+<platform name="android">
+</platform> 
+
+<!-- ios-specific elements -->
+<platform name="ios">
+    <config-file target="*-Info.plist" parent="CFBundleURLTypes">
+        <array>
+            <dict>
+                <key>NSAppTransportSecurity</key>
+                <dict>
+                    <key>NSAllowsArbitraryLoads</key>
+                </dict>
+            </dict>
+        </array>
+    </config-file>
+</platform>
+
+</plugin>
