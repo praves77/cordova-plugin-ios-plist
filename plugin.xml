@@ -47,15 +47,12 @@
 
 <!-- ios-specific elements -->
 <platform name="ios">
-    <config-file target="*-Info.plist" parent="CFBundleURLTypes">
-        <array>
-            <dict>
-                <key>NSAppTransportSecurity</key>
-                <dict>
-                    <key>NSAllowsArbitraryLoads</key>
-                </dict>
-            </dict>
-        </array>
+    <config-file target="*-Info.plist" parent="/">
+      <key>NSAppTransportSecurity</key>
+        <dict>
+          <key>NSAllowsArbitraryLoads</key>
+          <true/> 
+        </dict>
     </config-file>
 </platform>
 
